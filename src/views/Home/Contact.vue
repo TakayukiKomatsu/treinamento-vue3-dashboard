@@ -5,7 +5,7 @@
         Alguma dúvida?
       </h1>
       <p class="text-lg text-center text-gray-800 font-regular">
-        Quer saber melhor como funciona e quais são os preços ?
+        Quer saber melhor como funciona e quais são os preços?
       </p>
       <div class="mt-10">
         <a
