@@ -10,8 +10,10 @@
 <script>
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+
 import CustomHeader from './CustomHeader'
 import Contact from './Contact'
+import useModal from '../../hooks/useModal'
 
 export default {
   components: {
@@ -21,6 +23,7 @@ export default {
 
   setup () {
     const router = useRouter()
+    const modal = useModal()
 
     onMounted(() => {
       const token = window.localStorage.getItem('token')
@@ -31,9 +34,18 @@ export default {
       }
     })
 
-    function handleLogin () {}
+    function handleLogin () {
+      /* console.log('login') */
+      modal.open({
+        component: 'ModalLogin'
+      })
+    }
 
-    function handleAccountCreate () {}
+    function handleAccountCreate () {
+      modal.open({
+        component: 'ModalAccountCreate'
+      })
+    }
 
     return { handleLogin, handleAccountCreate }
   }
