@@ -114,6 +114,8 @@ export default {
           password: state.password.value
         })
 
+        /*   console.log(errors.status) */
+
         if (!errors) {
           window.localStorage.setItem('token', data.token)
           router.push({ name: 'Feedbacks' })
@@ -127,7 +129,7 @@ export default {
         }
 
         if (errors.status === 401) {
-          toast.error('E-mail ou senha inválidos')
+          toast.error('E-mail/senha inválidos')
         }
 
         if (errors.status === 400) {
