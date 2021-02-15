@@ -28,15 +28,15 @@
         </span>
       </label>
 
-      <label class="block">
-        <span class="text-lg font-medium text-gray-800">E-mail</span>
+      <label class="block mt-9">
+        <span class="text-lg font-medium text-gray-800">Senha</span>
         <input
           type="password"
           class="block w-full px-4 py-3 mt-1 text-lg bg-gray-100 border-2 border-transparent rouded"
           :class="{
             'border-brand-danger': !!state.password.errorMessage
           }"
-          placeholder="jane.doe@gmail.com"
+          placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
           v-model="state.password.value"
         />
         <span
@@ -63,21 +63,40 @@
 
 <script>
 import { reactive } from 'vue'
+
+import { useField } from 'vee-validate'
+
 import useModal from '../../hooks/useModal'
+import {
+  validadeEmptyAndLength3,
+  validadeEmptyAndEmail
+} from '../../utils/validators'
+
 export default {
   setup () {
     const modal = useModal()
+
+    const { value: emailValue, errorMessage: emailErrorMessage } = useField(
+      'email',
+      validadeEmptyAndEmail
+    )
+
+    const {
+      value: passwordValue,
+      errorMessage: passwordErrorMessage
+    } = useField('password', validadeEmptyAndLength3)
+
     const state = reactive({
       hasErrors: false,
       isLoading: false,
 
       email: {
-        value: '',
-        errorMessage: ''
+        value: emailValue,
+        errorMessage: emailErrorMessage
       },
       password: {
-        value: '',
-        errorMessage: ''
+        value: passwordValue,
+        errorMessage: passwordErrorMessage
       }
     })
     function handleSubmit () {}
