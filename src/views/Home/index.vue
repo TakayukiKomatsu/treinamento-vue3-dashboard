@@ -35,7 +35,6 @@ export default {
     })
 
     function handleLogin () {
-      /* console.log('login') */
       modal.open({
         component: 'ModalLogin'
       })

@@ -118,8 +118,6 @@ export default {
           password: state.password.value
         })
 
-        /*   console.log(errors.status) */
-
         if (!errors) {
           window.localStorage.setItem('token', data.token)
           router.push({ name: 'Feedbacks' })
