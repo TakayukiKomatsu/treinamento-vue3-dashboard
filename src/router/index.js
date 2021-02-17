@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
-const Home = () => import('../views/Home/index.vue')
 const Credencials = () => import('../views/Credencials/index.vue')
 const Feedbacks = () => import('../views/Feedbacks/index.vue')
+const Home = () => import('../views/Home/index.vue')
 
 const routes = [
   {
@@ -19,7 +18,7 @@ const routes = [
     }
   },
   {
-    path: '/crendencials',
+    path: '/credencials',
     name: 'Credencials',
     component: Credencials,
     meta: {

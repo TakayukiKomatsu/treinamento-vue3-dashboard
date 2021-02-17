@@ -19,8 +19,9 @@
 </template>
 
 <script>
-import { reactive, onMounted, onBeforeUnmount, defineAsyncComponent } from 'vue'
 import useModal from '../../hooks/useModal'
+
+import { reactive, onMounted, onBeforeUnmount, defineAsyncComponent } from 'vue'
 
 const ModalLogin = defineAsyncComponent(() => import('../ModalLogin'))
 const ModalAccountCreate = defineAsyncComponent(() =>

@@ -82,18 +82,14 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
-
-import { useField } from 'vee-validate'
-
+import Icon from '../Icon'
+import services from '../../services'
 import useModal from '../../hooks/useModal'
 
-import services from '../../services'
+import { reactive } from 'vue'
+import { useField } from 'vee-validate'
 import { useRouter } from 'vue-router'
 import { useToast } from 'vue-toastification'
-
-import Icon from '../Icon'
-
 import {
   validadeEmptyAndLength3,
   validadeEmptyAndEmail
@@ -102,8 +98,8 @@ import {
 export default {
   components: { Icon },
   setup () {
-    const router = useRouter()
     const modal = useModal()
+    const router = useRouter()
     const toast = useToast()
 
     const { value: nameValue, errorMessage: nameErrorMessage } = useField(

@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import { onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-
 import CustomHeader from './CustomHeader'
 import Contact from './Contact'
 import useModal from '../../hooks/useModal'
+
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   components: {

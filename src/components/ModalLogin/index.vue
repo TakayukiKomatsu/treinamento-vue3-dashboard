@@ -63,21 +63,18 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
-
-import { useField } from 'vee-validate'
-
+import Icon from '../Icon'
+import services from '../../services'
 import useModal from '../../hooks/useModal'
+
+import { reactive } from 'vue'
+import { useField } from 'vee-validate'
+import { useRouter } from 'vue-router'
+import { useToast } from 'vue-toastification'
 import {
   validadeEmptyAndLength3,
   validadeEmptyAndEmail
 } from '../../utils/validators'
-
-import services from '../../services'
-import { useRouter } from 'vue-router'
-import { useToast } from 'vue-toastification'
-
-import Icon from '../Icon'
 
 export default {
   components: { Icon },
